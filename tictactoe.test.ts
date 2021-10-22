@@ -15,6 +15,31 @@ afterAll(async () => {
 test('I can start a game', async () => {
 
     let button = await (await driver).findElement(By.id('start-game'));
+    await driver.sleep(1000);
+
     await button.click();
+
+    await driver.sleep(1000)
     
 });
+
+test("Should return an 'X' in the top left square", async () => {
+    let leftCell = await (await driver).findElement(By.id('cell-0'));
+    await leftCell.click()
+
+    await driver.sleep(1000)
+})
+
+test("Should return an 'X' in the middle square", async () => {
+    let middleCell = await (await driver).findElement(By.id('cell-4'));
+    await middleCell.click()
+
+    await driver.sleep(1000)
+})
+
+test("Should return an 'X' in the bottom right square", async () => {
+    let bottomCell = await (await driver).findElement(By.id('cell-8'));
+    await bottomCell.click()
+
+    await driver.sleep(1000)
+})
